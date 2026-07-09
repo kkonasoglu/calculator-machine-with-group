@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeIcon = themeToggleBtn.querySelector('i');
     const htmlElement = document.documentElement;
 
-    // LocalStorage kontrolü
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         htmlElement.setAttribute('data-theme', 'dark');
@@ -54,18 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // --- 4. Mobile Dropdown Toggle ---
-    const dropdowns = document.querySelectorAll('.dropdown');
-    dropdowns.forEach(dropdown => {
-        const link = dropdown.querySelector('a');
-        link.addEventListener('click', (e) => {
-            if(window.innerWidth <= 768) {
-                e.preventDefault();
-                dropdown.classList.toggle('active');
-            }
-        });
-    });
-
+    // Mobil menü linklerine tıklanınca menüyü kapatma
     const navLinks = navbar.querySelectorAll('a:not(.dropdown > a)');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -73,12 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 navbar.classList.remove('active');
                 menuIcon.classList.remove('fa-xmark');
                 menuIcon.classList.add('fa-bars');
-                dropdowns.forEach(dd => dd.classList.remove('active'));
             }
         });
     });
 
-    // --- 5. Scroll Animations ---
+    // --- 4. Scroll Animasyonları ---
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     const observerOptions = {
         root: null,
@@ -98,87 +85,33 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollObserver.observe(el);
     });
 
-    // --- 6. Advanced 12-Item Testimonial Slider ---
-    const track = document.getElementById('sliderTrack');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    const cards = document.querySelectorAll('.testimonial-card');
-    const dotsContainer = document.getElementById('sliderDots');
-    
-    let currentIndex = 0;
-    let maxIndex = 0;
-    
-    function getCardsPerView() {
-        if (window.innerWidth <= 768) return 1;
-        if (window.innerWidth <= 992) return 2;
-        return 4; 
-    }
+    // --- 5. ScrollSpy (Anlık Aktif Menü Takibi) ---
+    const sections = document.querySelectorAll("section[id]");
+    // İSİM ÇAKIŞMASINI ÖNLEMEK İÇİN spyLinks OLARAK DEĞİŞTİRİLDİ
+    const spyLinks = document.querySelectorAll(".navbar a"); 
 
-    function generateDots() {
-        dotsContainer.innerHTML = ''; 
-        const cardsPerView = getCardsPerView();
-        maxIndex = cards.length - cardsPerView;
-        
-        for(let i = 0; i <= maxIndex; i++) {
-            const dot = document.createElement('span');
-            dot.classList.add('dot');
-            if (i === currentIndex) dot.classList.add('active');
-            
-            dot.addEventListener('click', () => {
-                currentIndex = i;
-                updateSlider();
-            });
-            
-            dotsContainer.appendChild(dot);
-        }
-    }
+    window.addEventListener("scroll", () => {
+        let current = "";
 
-    function updateSlider() {
-        const cardsPerView = getCardsPerView();
-        maxIndex = cards.length - cardsPerView;
-        
-        if (currentIndex > maxIndex) currentIndex = maxIndex;
-        if (currentIndex < 0) currentIndex = 0;
-
-        const cardWidth = cards[0].offsetWidth;
-        const gap = 30; 
-        
-        track.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
-
-        const allDots = dotsContainer.querySelectorAll('.dot');
-        allDots.forEach((dot, index) => {
-            if (index === currentIndex) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
-        });
-    }
-
-    if(nextBtn && prevBtn){
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < maxIndex) {
-                currentIndex++;
-                updateSlider();
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= (sectionTop - 150)) {
+                current = section.getAttribute("id");
             }
         });
 
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateSlider();
+        spyLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === `#${current}`) {
+                link.classList.add("active");
+                
+                // Eğer dropdown içindeyse ana menüyü de yak
+                const parentDropdown = link.closest('.dropdown');
+                if (parentDropdown) {
+                    parentDropdown.querySelector('a').classList.add('active');
+                }
             }
         });
-    }
-
-    window.addEventListener('resize', () => {
-        if(window.innerWidth > 768) {
-            dropdowns.forEach(dd => dd.classList.remove('active'));
-        }
-        generateDots();
-        updateSlider();
     });
-    
-    generateDots();
-    updateSlider();
+
 });
