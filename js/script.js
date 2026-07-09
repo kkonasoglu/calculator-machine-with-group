@@ -256,4 +256,31 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (e) {
         console.error("EmailJS başlatma koruması devrede:", e);
     }
+
+    // --- 8. ScrollSpy (Sayfa Kaydırıldıkça Navigasyonun Güncellenmesi) ---
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            // Yukarıdaki yapışkan (sticky) header'ın yüksekliğini hesaba katmak için
+            // 100px civarı bir pay (offset) bırakıyoruz.
+            if (window.scrollY >= sectionTop - 100) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        // Tüm linklerden active sınıfını temizle, sadece ekranda olan section'a ait linke ekle
+        navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === `#${current}`) {
+                link.classList.add("active");
+            }
+        });
+    });
 })();

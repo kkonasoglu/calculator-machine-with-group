@@ -55,6 +55,11 @@ html {
     box-sizing: border-box;
 }
 
+.logo img{
+    width: 200px;
+    height: 100px;
+}
+
 html {
     scroll-behavior: smooth;
 }
