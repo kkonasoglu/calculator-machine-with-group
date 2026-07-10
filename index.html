@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>PHP Mail Formu</title>
+</head>
+<body>
+
+    <h2>İletişim Formu</h2>
+    <form action="mail-gonder.php" method="POST">
+        <label>Adınız:</label><br>
+        <input type="text" name="isim" required><br><br>
+
+        <label>E-posta Adresiniz:</label><br>
+        <input type="email" name="eposta" required><br><br>
+
+        <label>Mesajınız:</label><br>
+        <textarea name="mesaj" rows="5" required></textarea><br><br>
+
+        <button type="submit">Mail Gönder</button>
+    </form>
+
+</body>
+</html>

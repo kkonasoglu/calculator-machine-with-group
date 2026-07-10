@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mükellef Portal</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container-fluid nav-container">
+            <div class="logo">
+                <a href="#ana-sayfa-alani" id="navbarLogo"><img src="images/logolar/mukellef-portal-logo.png" alt=""></a>
+            </div>
+            <nav class="navbar" id="navbar">
+                <ul>
+                    <li><a href="#ana-sayfa-alani" class="nav-link active">Ana Sayfa</a></li>
+                    <li><a href="#hizmetler-alani" class="nav-link">Hizmetler</a></li>
+                    <li> <a href="#ekibimiz-alani" class="nav-link">Ekibimiz</a></li>
+                    <li><a href="#iletisim-alani" class="nav-link">İletişim</a></li>
+
+                </ul>
+            </nav>
+            <div class="header-right">
+                <a href="https://app.mukellefportal.com/auth/login" class="btn btn-primary login-btn">Portal Giriş</a>
+
+                <!-- Karanlık Tema Geçiş Butonu -->
+                <button class="theme-toggle-btn" id="themeToggle" aria-label="Temayı Değiştir">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="ana-sayfa-alani">
+        <div class="container-fluid hero-container">
+            <div class="hero-content animate-on-scroll">
+                <h1>Mali Müşavirlerin Kısayolu:<br><span>Tek Tuşla Beyannamelerinizi Görün</span></h1>
+                <p>Muhasebe ve mali müşavirlik süreçlerini dijital dünyaya taşıyan yenilikçi yazılım platformu ile iş
+                    yükünüzü hafifletin, zaman kazanın.</p>
+                <div class="hero-buttons">
+                    <a href="https://app.mukellefportal.com/auth/login" class="btn btn-primary">Hemen Başlayın</a>
+                    <a href="#hizmetler-alani" class="btn btn-outline">Hizmetleri İncele</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1 float-anim">
+                    <i class="fa-regular fa-envelope"></i> e-Tebligat Takibi
+                </div>
+                <div class="floating-card card-2 float-anim delay-1">
+                    <i class="fa-regular fa-file-lines"></i> E-Beyanname Yönetimi
+                </div>
+                <div class="floating-card card-3 float-anim delay-2">
+                    <i class="fa-solid fa-building-columns"></i> SGK Takibi
+                </div>
+                <div class="floating-card card-4 float-anim delay-3">
+                    <i class="fa-regular fa-bell"></i> Hızlı Bildirim
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hizmetler Özel Karşılama (Hero) Alanı -->
+    <section class="services-intro bg-white" id="hizmetler-alani">
+        <div class="container intro-container">
+            <!-- Sol Taraf: Metin ve Butonlar -->
+            <div class="intro-content animate-on-scroll">
+                <span class="badge-soft">🚀 ŞEFFAF VE AVANTAJLI FİYATLANDIRMA</span>
+
+                <h2 class="intro-title">Tüm dijital süreçleriniz, <br>mükellef başına yılda <span
+                        class="text-accent">sadece 100 TL.</span></h2>
+
+                <p class="intro-desc">
+                    Sürpriz faturalara son! Mükellef Portal ile tüm işlemlerinizi tek bir ekrandan yönetirken, işletme
+                    maliyetlerinizi minimuma indirin. Üstelik bizimle çalışanlara özel eşsiz fırsatlarla:
+                </p>
+
+                <ul class="intro-benefits" style="list-style: none; padding: 0; margin-bottom: 30px;">
+                    <li
+                        style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-weight: 500; color: var(--text-dark);">
+                        <i class="fa-solid fa-circle-check" style="color: #10b981; font-size: 1.2rem;"></i>
+                        e-Defter mükellefiyseniz kullanım <strong
+                            style="color: var(--accent-color); margin-left: 5px;">BEDAVA</strong>
+                    </li>
+                    <li
+                        style="margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-weight: 500; color: var(--text-dark);">
+                        <i class="fa-solid fa-circle-check" style="color: #10b981; font-size: 1.2rem;"></i>
+                        e-Fatura mükellefiyseniz kullanım <strong
+                            style="color: var(--accent-color); margin-left: 5px;">BEDAVA</strong>
+                    </li>
+                </ul>
+
+                <div class="intro-buttons">
+                    <a href="#" class="btn btn-primary">Hemen Kayıt Olun <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#" class="btn btn-outline">Detaylı Bilgi Alın</a>
+                </div>
+            </div>
+
+            <!-- Sağ Taraf: Uygulama/Panel Görseli -->
+            <div class="intro-visual animate-on-scroll delay-1">
+                <!-- Kendi panelinin ekran görüntüsünü (örn: image_83d6e1.jpg) buraya koyabilirsin -->
+                <div class="mockup-box float-anim">
+                    <img src="images/mukellef_portal-1.jpeg" alt="Mükellef Portal Arayüzü" class="panel-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İstatistik / Güven Çubuğu -->
+    <div class="stats-bar border-y bg-light">
+        <div class="container stats-container animate-on-scroll">
+            <div class="stat-item">
+                <span class="stat-number">90+</span>
+                <span class="stat-text">Aktif Modül</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">Sınırsız</span>
+                <span class="stat-text">Mükellef Ekleme</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">%100</span>
+                <span class="stat-text">Bulut Mimari</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">7/24</span>
+                <span class="stat-text">Teknik Destek</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sunduğumuz Hizmetler (Alt Kartlar) -->
+    <section class="services-grid-section bg-light">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Bütünleşik Dijital Ofisiniz</h2>
+                <p>Ekranlar arasında kaybolmaya son! Tüm süreçlerinizi ve alt modüllerinizi tek ekrandan hatasız
+                    yönetin.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <div class="icon-box"><i class="fa-solid fa-building"></i></div>
+                    <h3>Firmalarım</h3>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Tüm mükelleflerin listesi ve durumları</li>
+                        <li><i class="fa-solid fa-check"></i> Şirket, Şahıs ve Basit Usul ayrımı</li>
+                        <li><i class="fa-solid fa-check"></i> Aktif/Pasif mükellef kontrolü</li>
+                        <li><i class="fa-solid fa-check"></i> Lisans ve kota takibi</li>
+                    </ul>
+                </div>
+
+                <div class="service-card animate-on-scroll delay-1">
+                    <div class="icon-box"><i class="fa-solid fa-file-invoice"></i></div>
+                    <h3>e-Beyanname</h3>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> e-Beyanname Görüntüleme</li>
+                        <li><i class="fa-solid fa-check"></i> e-Beyanname Kontrol Listesi</li>
+                        <li><i class="fa-solid fa-check"></i> Kişi ve tür bazlı toplu beyan takibi</li>
+                    </ul>
+                </div>
+
+                <div class="service-card animate-on-scroll delay-2">
+                    <div class="icon-box"><i class="fa-solid fa-envelope-open-text"></i></div>
+                    <h3>e-Tebligat</h3>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Anlık gelen tebligat bildirimleri</li>
+                        <li><i class="fa-solid fa-check"></i> Günlük, haftalık ve aylık özetler</li>
+                        <li><i class="fa-solid fa-check"></i> Yıllık toplam tebligat arşivi</li>
+                    </ul>
+                </div>
+
+                <div class="service-card animate-on-scroll">
+                    <div class="icon-box"><i class="fa-solid fa-building-columns"></i></div>
+                    <h3>SGK İşlemleri</h3>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> SGK Kontrol Listesi</li>
+                        <li><i class="fa-solid fa-check"></i> SGK E-Rapor (Onaylı/Onaysız)</li>
+                        <li><i class="fa-solid fa-check"></i> E-Bildirge (Belge/Çalışan)</li>
+                        <li><i class="fa-solid fa-check"></i> İşe Giriş Çıkış Bildirgeleri</li>
+                        <li><i class="fa-solid fa-check"></i> İş Kazası Tutanakları</li>
+                    </ul>
+                </div>
+
+                <div class="service-card animate-on-scroll delay-1">
+                    <div class="icon-box"><i class="fa-solid fa-user-tie"></i></div>
+                    <h3>Personel Yönetimi</h3>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Personel Takibi</li>
+                        <li><i class="fa-solid fa-check"></i> Personel Mesai Çizelgesi</li>
+                        <li><i class="fa-solid fa-check"></i> Personel Etkinlikleri ve Yetkilendirme</li>
+                    </ul>
+                </div>
+
+                <div class="service-card animate-on-scroll delay-2">
+                    <div class="icon-box"><i class="fa-solid fa-credit-card"></i></div>
+                    <h3>Ödeme İşlemleri</h3>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Aylık Ödeme Listesi</li>
+                        <li><i class="fa-solid fa-check"></i> Cari Kasa Takibi</li>
+                        <li><i class="fa-solid fa-check"></i> Güncel Vergi & SGK Borçları</li>
+                        <li><i class="fa-solid fa-check"></i> Online Ödeme ve Ücret Yönetimi</li>
+                        <li><i class="fa-solid fa-check"></i> Finansal İstatistikler</li>
+                    </ul>
+                </div>
+
+                <div class="service-card animate-on-scroll">
+                    <div class="icon-box"><i class="fa-solid fa-gear"></i></div>
+                    <h3>Sistem Ayarları</h3>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Profil ve Bilgilerim</li>
+                        <li><i class="fa-solid fa-check"></i> SMS, WhatsApp ve Mail Ayarları</li>
+                        <li><i class="fa-solid fa-check"></i> Mükellef Grupları Oluşturma</li>
+                        <li><i class="fa-solid fa-check"></i> Mükellef Portal İndirme Kısayolu</li>
+                    </ul>
+                </div>
+
+                <div class="service-card animate-on-scroll delay-1">
+                    <div class="icon-box"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3>Raporlar & Kullanıcılar</h3>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> POS + TODEB Raporları</li>
+                        <li><i class="fa-solid fa-check"></i> Genel Sistem Raporları</li>
+                        <li><i class="fa-solid fa-check"></i> Ofis Kullanıcıları Tanımlama</li>
+                        <li><i class="fa-solid fa-check"></i> Kullanıcı Yetki Seviyeleri</li>
+                    </ul>
+                </div>
+
+                <div class="service-card animate-on-scroll delay-2">
+                    <div class="icon-box"><i class="fa-solid fa-headset"></i></div>
+                    <h3>Destek & Yardımcı Araçlar</h3>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Uzmana Sor (Destek Talepleri)</li>
+                        <li><i class="fa-solid fa-check"></i> Sıkça Sorulan Sorular Kütüphanesi</li>
+                        <li><i class="fa-solid fa-check"></i> Dilekçeler Modülü</li>
+                        <li><i class="fa-solid fa-check"></i> Sistem Geliştirme Önerileri</li>
+                    </ul>
+                </div>
+
+                <div class="service-card animate-on-scroll">
+                    <div class="icon-box"><i class="fa-solid fa-book"></i></div>
+                    <h3>e-Defter Merkezi</h3>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-check"></i> Otomatik e-Defter Berat gönderimi</li>
+                        <li><i class="fa-solid fa-check"></i> Dijital ortamda güvenli arşivleme</li>
+                    </ul>
+                    <div
+                        style="margin-top: 15px; padding: 10px; background-color: rgba(67, 56, 202, 0.05); border-left: 3px solid var(--accent-color, #4338ca); border-radius: 4px; font-size: 0.9rem;">
+                        <strong>🎉 Kampanya:</strong> Bizimle çalışan e-Fatura ve e-Defter mükellefleri için bu modül
+                        tamamen <strong>ücretsizdir!</strong>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="container info-container">
+            <div class="info-content animate-on-scroll">
+                <h2>Mükellefleriniz arasındaki <br><span>evrak karmaşasına son</span></h2>
+                <p class="subtitle">Mükellef Portal, serbest muhasebeci mali müşavirlerin (SMMM) iş yükünü hafifletmek
+                    ve resmi işlemleri hızlandırmak için tasarlandı.</p>
+
+                <ul class="features-list">
+                    <li>
+                        <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+                        <div>
+                            <h4>7/24 Çağrı Desteği</h4>
+                            <p>Kesintisiz teknik destek ile her zaman yanınızdayız.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <h4>Hızlı Çözüm</h4>
+                            <p>İşlemlerinizi tek tıkla saniyeler içinde tamamlayın.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <h4>Tecrübeli Çalışma Kadrosu</h4>
+                            <p>Sektör dinamiklerine hakim uzman ekip.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="info-visual animate-on-scroll delay-1">
+                <div class="experience-card float-anim">
+                    <i class="fa-solid fa-award"></i>
+                    <h3>80+</h3>
+                    <p>YILLIK TOPLAM SEKTÖR TECRÜBESİ</p>
+                    <span class="quote-italic">"Güvenilir altyapı, kesintisiz hizmet."</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="team-section bg-light" id="ekibimiz-alani">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Ekibimiz</h2>
+                <p>Başarımızın arkasındaki uzman ve dinamik kadromuzla tanışın.</p>
+            </div>
+            <div class="team-grid">
+                <!-- Kişi 1 -->
+                <div class="team-card animate-on-scroll">
+                    <div class="team-img-box">
+                        <img src="images/team/abdulkadir-erdogan.jpg" alt="ABDULKADİR ERDOĞAN"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <i class="fa-regular fa-user placeholder-icon" style="display: none;"></i>
+                    </div>
+                    <div class="team-info">
+                        <div class="member-details">
+                            <h4>AbdulKadir Erdoğan</h4>
+                            <p>Kurucu & CEO</p>
+                        </div>
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/abdulkadir-erdo%C4%9Fan-a652311ab/" target="_blank"
+                                rel="noopener noreferrer" class="linkedin-btn"><i class="fa-brands fa-linkedin"></i>
+                                LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card animate-on-scroll delay-1">
+                    <div class="team-img-box">
+                        <img src="images/team/yasin-sahin.jpeg" alt="YASİN ŞAHİN"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    </div>
+                    <div class="team-info">
+                        <div class="member-details">
+                            <h4>Yasin Şahin</h4>
+                            <p>Yazılım Geliştirici</p>
+                        </div>
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/yasinsahin55/" target="_blank"
+                                rel="noopener noreferrer" class="linkedin-btn"><i class="fa-brands fa-linkedin"></i>
+                                LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card animate-on-scroll delay-2">
+                    <div class="team-img-box">
+
+                        <img src="images/team/umit-sonar.jpeg" alt="UMİT SONAR"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <i class="fa-regular fa-user placeholder-icon" style="display: none;"></i>
+                    </div>
+                    <div class="team-info">
+                        <div class="member-details">
+                            <h4>Ümit Sonar</h4>
+                            <p>Yazılım Geliştirici</p>
+                        </div>
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/%C3%BCmitsonar/" target="_blank"
+                                rel="noopener noreferrer" class="linkedin-btn"><i class="fa-brands fa-linkedin"></i>
+                                LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card animate-on-scroll delay-3">
+                    <div class="team-img-box">
+                        <img src="images/team/bedirhan-parlak.jpeg" alt="BEDİRHAN PARLAK"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <i class="fa-regular fa-user placeholder-icon" style="display: none;"></i>
+                    </div>
+                    <div class="team-info">
+                        <div class="member-details">
+                            <h4>Zihni Bedirhan Parlak</h4>
+                            <p>Yazılım Geliştirici</p>
+                        </div>
+                        <div class="member-social">
+                            <a href="https://www.linkedin.com/in/bedirhan-parlak-8a42033bb/" target="_blank"
+                                rel="noopener noreferrer" class="linkedin-btn"><i class="fa-brands fa-linkedin"></i>
+                                LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kişi 5 (Alt Satır Sağ) -->
+                <div class="team-card animate-on-scroll delay-1">
+                    <div class="team-img-box">
+                        <i class="fa-regular fa-user placeholder-icon"></i>
+                    </div>
+                    <div class="team-info">
+                        <div class="member-details">
+                            <h4>İbrahim Güneş</h4>
+                            <p>Mobil Geliştirici</p>
+                        </div>
+                        <div class="member-social">
+                            <a href="#" target="_blank" class="linkedin-btn"><i class="fa-brands fa-linkedin"></i>
+                                LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-section">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Güçlü Çözüm Ortaklarımız</h2>
+                <p>Altyapımızda kullandığımız ve entegre çalıştığımız öncü markalar.</p>
+            </div>
+
+            <div class="partners-grid animate-on-scroll delay-1">
+                <!-- Kart 1: Jetkolay -->
+                <div class="partner-card">
+                    <a href="https://www.jetkolay.com" target="_blank" title="Jetkolay'a Git"
+                        style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
+                        <!-- Logonun biraz daha büyük görünmesi için transform: scale ekledik -->
+                        <img src="images/logolar/jet-kolay-logo.png" alt="Jetkolay"
+                            style="max-width: 90%; max-height: 80px; object-fit: contain; transform: scale(1.2);">
+                    </a>
+                </div>
+
+                <!-- Kart 2: Mysoft -->
+                <div class="partner-card">
+                    <a href="https://www.mysoft.com.tr" target="_blank" title="Mysoft'a Git"
+                        style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
+                        <img src="images/logolar/mysoft-logo.png" alt="mysoft"
+                            style="max-width: 90%; max-height: 80px; object-fit: contain;">
+                    </a>
+                </div>
+
+                <!-- Kart 3: Arksotek -->
+                <div class="partner-card">
+                    <a href="https://aksotek.com.tr/" target="_blank" title="Arksotek'e Git"
+                        style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
+                        <img src="images/logolar/aksoket-logo.png" alt="arksotek"
+                            style="max-width: 90%; max-height: 80px; object-fit: contain;">
+                    </a>
+                </div>
+
+                <!-- Kart 4: ArkSigner -->
+                <div class="partner-card">
+                    <a href="https://www.arksigner.com" target="_blank" title="ArkSigner'a Git"
+                        style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
+                        <img src="images/logolar/arksigner.png" alt="arksigner"
+                            style="max-width: 90%; max-height: 80px; object-fit: contain;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="iletisim-alani"
+        style="padding: 80px 20px; background-color: #f8f9fa; font-family: sans-serif; margin-top: 60px;">
+        <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+
+            <h1 style="color: #1e293b; font-size: 36px; margin-bottom: 40px; font-weight: bold;">Bize Ulaşın</h1>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; text-align: left; align-items: stretch;">
+
+                <!-- Sol Taraf: İletişim Bilgileri -->
+                <div
+                    style="flex: 1; min-width: 320px; background-color: #1e252b; color: white; padding: 40px; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; gap: 25px; box-sizing: border-box;">
+
+                    <div>
+                        <span style="color: #94a3b8; font-size: 14px; display: block; margin-bottom: 5px;">📞 |
+                            Telefon</span>
+                        <a href="tel:+905522855561"
+                            style="color: white; text-decoration: none; font-size: 24px; font-weight: bold; display: block;">
+                            0552 285 55 61
+                        </a>
+                    </div>
+
+                    <div>
+                        <span style="color: #94a3b8; font-size: 14px; display: block; margin-bottom: 5px;">📞 |
+                            Telefon</span>
+                        <a href="tel:+905528435506"
+                            style="color: white; text-decoration: none; font-size: 24px; font-weight: bold; display: block;">
+                            0552 843 55 06
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Sağ Taraf: İletişim Formu (PHP entegreli) -->
+                <div
+                    style="flex: 1.2; min-width: 320px; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); box-sizing: border-box;">
+                    <h3 style="color: #1e293b; margin-bottom: 20px; font-size: 20px;">Bizimle İletişime Geçin</h3>
+
+                    <form id="mukellef-iletisim-formu" method="POST" action="form-handler.php" style="margin: 0;">
+                        <input type="text" name="customer_name" placeholder="Adınız Soyadınız" required
+                            style="width: 100%; padding: 14px; margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 6px; box-sizing: border-box; font-size: 15px;">
+                        <input type="email" name="customer_email" placeholder="E-posta Adresiniz" required
+                            style="width: 100%; padding: 14px; margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 6px; box-sizing: border-box; font-size: 15px;">
+                        <textarea name="customer_message" placeholder="Mesajınız" rows="5" required
+                            style="width: 100%; padding: 14px; margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: 6px; box-sizing: border-box; resize: none; font-size: 15px;"></textarea>
+
+                        <!-- Bot koruması: kullanıcıya görünmez, doluysa PHP tarafında spam sayılır -->
+                        <input type="text" name="website" tabindex="-1" autocomplete="off"
+                            style="position: absolute; left: -9999px; top: -9999px;">
+
+                        <button type="submit" id="form-submit-btn"
+                            style="width: 100%; padding: 14px; background-color: #1d4ed8; color: white; border: none; border-radius: 6px; font-weight: bold; font-size: 16px; cursor: pointer; transition: background-color 0.2s;">
+                            Gönder
+                        </button>
+
+                        <p id="form-status-msg" style="margin-top: 15px; font-size: 14px; display: none;"></p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <div class="logo">
+                    <strong>Mükellef</strong> Portal
+                </div>
+                <p>Mali müşavirlerin dijital kısayolu.</p>
+
+                <!-- Sosyal Medya İkonları -->
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-x"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Hızlı Linkler</h4>
+                <ul>
+                    <li><a href="#ana-sayfa-alani">Ana Sayfa</a></li>
+                    <li><a href="#hizmetler-alani">Hizmetler</a></li>
+                    <li><a href="#ekibimiz-alani">Ekibimiz</a></li>
+                    <li><a href="#iletisim-alani">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Yasal</h4>
+                <ul>
+                    <li><a href="#">Gizlilik Politikası</a></li>
+                    <li><a href="#">KVKK</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>İletişim</h4>
+                <ul class="contact-info">
+                    <!-- Tıklanabilir Harita Linki -->
+                    <li>
+                        <a href="https://www.google.com/maps?ll=41.297399,36.332208&z=17&t=m&hl=tr&gl=TR&mapclient=embed&cid=4014054536983940385"
+                            target="_blank" rel="noopener noreferrer"
+                            style="display: flex; align-items: center; gap: 12px;">
+                            <i class="fa-solid fa-location-dot"></i> İlkadım/Samsun
+                        </a>
+                    </li>
+                    <li><i class="fa-solid fa-phone"></i> 0501 378 5500</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>© 2026 Mükellef Portal. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <!-- İletişim Formu - PHP entegrasyonu (AJAX ile sayfa yenilenmeden gönderim) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('mukellef-iletisim-formu');
+            const statusMsg = document.getElementById('form-status-msg');
+            const submitBtn = document.getElementById('form-submit-btn');
+
+            if (!form) return;
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+                const originalBtnText = submitBtn.textContent;
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Gönderiliyor...';
+                statusMsg.style.display = 'none';
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                })
+                    .then(function (response) {
+                        return response.json().catch(function () {
+                            throw new Error('Sunucudan geçersiz yanıt alındı.');
+                        });
+                    })
+                    .then(function (data) {
+                        statusMsg.style.display = 'block';
+                        if (data.success) {
+                            statusMsg.style.color = '#16a34a';
+                            statusMsg.textContent = data.message || 'Mesajınız başarıyla gönderildi.';
+                            form.reset();
+                        } else {
+                            statusMsg.style.color = '#dc2626';
+                            statusMsg.textContent = data.message || 'Bir hata oluştu, lütfen tekrar deneyin.';
+                        }
+                    })
+                    .catch(function (err) {
+                        statusMsg.style.display = 'block';
+                        statusMsg.style.color = '#dc2626';
+                        
+                    })
+                    .finally(function () {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalBtnText;
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>
