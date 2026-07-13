@@ -75,6 +75,11 @@
         #progress-scroll-btn:hover .progress-circle path {
             stroke: rgba(88, 66, 227, 1); /* Üzerine gelindiğinde mor çizgi tamamen parlar */
         }
+
+        body.menu-open {
+            overflow: hidden !important;
+            height: 100vh !important;
+        }
     </style>
 </head>
 
@@ -666,6 +671,40 @@
             });
 
             window.addEventListener("scroll", updateProgress);
+
+
+
+            
+            const navbar = document.getElementById("navbar");
+            const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            // 1. Hamburger menü butonuna tıklandığında
+            mobileMenuBtn.addEventListener("click", () => {
+                setTimeout(() => {
+                    if (navbar.classList.contains("active") || navbar.classList.contains("show")) {
+                        document.body.classList.add("menu-open");
+                    } else {
+                        document.body.classList.remove("menu-open");
+                    }
+                }, 50);
+            });
+
+            // 2. Menü linklerinden birine tıklandığında
+            navLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    navbar.classList.remove("active"); 
+                    navbar.classList.remove("show");
+                    mobileMenuBtn.classList.remove("active");
+                    mobileMenuBtn.classList.remove("open");
+                    
+                    const menuIcon = mobileMenuBtn.querySelector("i");
+                    if (menuIcon) {
+                        menuIcon.className = "fa-solid fa-bars";
+                    }
+                    document.body.classList.remove("menu-open");
+                });
+            });
         });
     </script>
 </body>
