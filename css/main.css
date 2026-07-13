@@ -471,7 +471,7 @@ h2 {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 320px yerine 280px yapıldı */
     justify-content: center;
     gap: 30px;
 }
@@ -1070,133 +1070,26 @@ h2 {
 
 /* Tablet ve Küçük Masaüstü (992px altı) */
 @media (max-width: 992px) {
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    /* Anasayfa */
-    .hero {
-        min-height: auto;
-        padding: 140px 0 80px;
-    }
-
-    .hero-container,
-    .info-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-content {
-        max-width: 100%;
-        margin-bottom: 40px;
-        padding-left: 0;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .hero-visual {
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        padding: 20px 0;
-    }
-
-    .hero-visual::before {
-        display: none;
-    }
-
-    .floating-card {
-       position: relative !important; /* hero.css içerisindeki absolute değerini kesin olarak ezer */
-        top: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        left: auto !important; /* Çakışma ihtimaline karşı left de sıfırlandı */
-        margin: 0;
-        width: calc(50% - 10px);
-        justify-content: center;
-        white-space: normal !important; /* Metnin taşmasını engeller, sığmazsa alt satıra indirir */
-        text-align: center;
-    }
-
-    .intro-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .intro-content {
-        max-width: 100%;
-    }
-
-    .intro-buttons {
-        justify-content: center;
-    }
-
-    .social-proof {
-        justify-content: center;
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .intro-title {
-        font-size: 2.3rem;
-    }
-
-    .intro-visual {
-        margin-top: 40px;
-        justify-content: center;
-    }
-
-    .info-content h2 {
-        font-size: 2rem;
-    }
-
-    .features-list li {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .testimonial-card {
-        min-width: calc(50% - 15px);
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    /* Hakkımızda Sayfası */
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .page-intro h1 {
-        font-size: 2.5rem;
+    /* Eski grid-template-columns kodunu silip bunu ekleyin */
+    .team-card {
+        width: calc(50% - 15px); /* Yan yana 2 kart */
+        max-width: none;
     }
 }
 
 /* Mobil Cihazlar (768px altı) */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.2rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    /* Navbar ve Dropdown Mobil Düzenleme */
+    
+    /* --- 1. KAYBOLAN 3 ÇİZGİ MENÜSÜNÜ GERİ GETİRME --- */
     .mobile-menu-btn {
-        display: block;
+        display: block; /* Butonu görünür yapar */
     }
 
     .login-btn {
-        display: none;
+        display: none; /* Masaüstündeki Portal Giriş butonunu mobilde gizler */
     }
 
+    /* --- 2. MOBİL AÇILIR MENÜ (SIDEBAR) AYARLARI --- */
     .navbar {
         position: fixed;
         top: 70px;
@@ -1237,125 +1130,99 @@ h2 {
         width: auto;
     }
 
-    .dropdown {
+    /* --- 3. ANA SAYFA VE İÇERİKLERİN SIKIŞMASINI ÖNLEME --- */
+    .hero-container,
+    .intro-container,
+    .info-container {
         flex-direction: column;
-    }
-
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        background-color: transparent;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        display: none;
-        padding: 0;
-        margin-top: 5px;
-        width: 100%;
-        border: none;
-    }
-
-    .dropdown.active .dropdown-menu {
-        display: flex;
-    }
-
-    .dropdown.active .dropdown-icon {
-        transform: rotate(180deg);
-    }
-
-    .dropdown-menu a {
-        padding: 10px 15px;
-        font-size: 1rem;
-        color: var(--text-gray);
-    }
-
-    /* Anasayfa Mobil Düzenleme */
-    .floating-card {
-        width: 100%;
-    }
-
-    .intro-title {
-        font-size: 2rem;
-    }
-
-    .intro-desc {
-        font-size: 1rem;
-    }
-
-    .intro-buttons {
-        flex-direction: column;
-    }
-
-    .intro-buttons .btn {
-        width: 100%;
-    }
-
-    .stats-container {
-        grid-template-columns: repeat(2, 1fr);
-        display: grid;
-    }
-
-    .stat-number {
-        font-size: 2rem;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-    .testimonial-card {
-        min-width: 100%;
-    }
-
-    .slider-btn {
-        display: none;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
         text-align: center;
-        gap: 30px;
     }
 
-    .contact-info li {
-        justify-content: center;
-    }
-
-    .footer-col ul a:hover {
-        padding-left: 0;
-        color: var(--accent-color);
-    }
-
-    .cta h2 {
-        font-size: 1.8rem;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
+    .hero-visual {
         width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 20px 0;
     }
 
-    .cta-buttons .btn {
+    /* --- 4. ÖNCEKİ DÜZELTMELER --- */
+    .container-fluid {
+        padding: 0 5%;
+    }
+
+    .team-card {
         width: 100%;
-    }
-
-    /* Hakkımızda Sayfası Mobil Düzenleme */
-    .team-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .partners-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .page-intro {
-        padding: 140px 0 80px;
-    }
-
-    .page-intro h1 {
-        font-size: 2.2rem;
+        max-width: none;
     }
 }
+
+
+/* =========================================
+   KESİN MOBİL DÜZELTME KODLARI (768px Altı)
+========================================= */
+@media (max-width: 768px) {
+    
+    /* 1. Header Sıkışmasını Önleme (3 Çizgiyi Geri Getirme) */
+    .login-btn {
+        display: none !important; /* Portal Giriş butonunu KESİN GİZLER */
+    }
+    .mobile-menu-btn {
+        display: block !important; /* 3 çizgi menüsünü KESİN GÖSTERİR */
+    }
+    .header-right {
+        gap: 10px !important;
+    }
+    .logo img {
+        max-width: 120px !important; /* Logoyu dar ekrana sığdırır */
+    }
+
+    /* 2. Uzun Kelimelerin Ekranı Patlatmasını Engelleme */
+    h1, h2, h3, h4, p {
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    h1 {
+        font-size: 1.9rem !important; /* Yazı boyutunu mobilde dengeler */
+        line-height: 1.3 !important;
+    }
+
+    /* 3. Uçuşan Kartların Ekran Dışına Çıkmasını Engelleme */
+    .floating-card {
+        position: relative !important; /* Kartları serbest bırakır */
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        width: 100% !important; /* Tam genişlik yapar */
+        margin-bottom: 15px !important;
+        white-space: normal !important; 
+        justify-content: flex-start !important;
+    }
+    .hero-visual {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        padding-top: 30px !important;
+    }
+    .hero-visual::before {
+        display: none !important; /* Arkaplandaki yuvarlağı mobilde iptal eder */
+    }
+
+    /* 4. Sayfanın Sağa-Sola Sallanmasını (Horizontal Scroll) Kesin Kapatma */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+
+    /* 5. Konteyner Boşlukları */
+    .container-fluid {
+        padding: 0 5% !important; /* Sağdan soldan %10 yerine %5 boşluk bırakır */
+    }
+}
+
 
 
 

@@ -59,19 +59,7 @@
             stroke: rgba(88, 66, 227, 1); /* Üzerine gelindiğinde mor çizgi tamamen parlar */
         }
 
-
-
-        /* 🚀 MOBİL MENÜYÜ SAĞ TARAFA TAŞIMA */
-        @media (max-width: 768px) {
-            .navbar {
-                left: auto !important; /* Soldan açılma özelliğini iptal ediyoruz */
-                right: -100% !important; /* İlk başta ekranın sağ dışında gizlensin */
-                transition: all 0.4s ease !important;
-            }
-
-            /* Menü açıldığında (active veya show klası geldiğinde) sağdan içeri girsin */
-            .navbar.active, .navbar.show {
-                right: 0 !important;
-                left: auto !important;
-            }
+        body.menu-open {
+            overflow: hidden !important;
+            height: 100vh !important;
         }

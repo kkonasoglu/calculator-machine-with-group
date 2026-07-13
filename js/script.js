@@ -509,5 +509,72 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollBtn = document.getElementById("progress-scroll-btn");
+            const progressPath = document.querySelector(".progress-circle path");
+            const pathLength = progressPath.getTotalLength();
+
+            progressPath.style.strokeDasharray = `${pathLength} ${pathLength}`;
+            progressPath.style.strokeDashoffset = pathLength;
+
+            const updateProgress = () => {
+                const scroll = window.scrollY || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                
+                const progress = pathLength - (scroll * pathLength) / height;
+                progressPath.style.strokeDashoffset = progress;
+
+                if (scroll > 200) {
+                    scrollBtn.classList.add("active");
+                } else {
+                    scrollBtn.classList.remove("active");
+                }
+            };
+
+            scrollBtn.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            });
+
+            window.addEventListener("scroll", updateProgress);
+
+
+
+            
+            const navbar = document.getElementById("navbar");
+            const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+            const navLinks = document.querySelectorAll(".nav-link");
+
+            // 1. Hamburger menü butonuna tıklandığında
+            mobileMenuBtn.addEventListener("click", () => {
+                setTimeout(() => {
+                    if (navbar.classList.contains("active") || navbar.classList.contains("show")) {
+                        document.body.classList.add("menu-open");
+                    } else {
+                        document.body.classList.remove("menu-open");
+                    }
+                }, 50);
+            });
+
+            // 2. Menü linklerinden birine tıklandığında
+            navLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    navbar.classList.remove("active"); 
+                    navbar.classList.remove("show");
+                    mobileMenuBtn.classList.remove("active");
+                    mobileMenuBtn.classList.remove("open");
+                    
+                    const menuIcon = mobileMenuBtn.querySelector("i");
+                    if (menuIcon) {
+                        menuIcon.className = "fa-solid fa-bars";
+                    }
+                    document.body.classList.remove("menu-open");
+                });
+            });
+        });
+
         
 })();
