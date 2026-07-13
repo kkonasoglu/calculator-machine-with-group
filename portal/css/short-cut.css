@@ -1,0 +1,60 @@
+  #progress-scroll-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: transparent; /* Arka plan tamamen şeffaf kalmaya devam ediyor */
+            border-radius: 50%;
+            box-shadow: none;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #progress-scroll-btn.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .arrow-icon {
+            font-size: 20px;
+            color: rgba(51, 51, 51, 0.75); /* Ok işareti daha belirgin ve canlı yapıldı */
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        #progress-scroll-btn:hover .arrow-icon {
+            transform: translateY(-3px);
+            color: rgba(88, 66, 227, 1); /* Üzerine gelince tam mor olur */
+        }
+
+        .progress-circle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .progress-circle path {
+            fill: none;
+            stroke: rgba(88, 66, 227, 0.7); /* Mor dairenin ilk hali %70 canlılığa yükseltildi, artık sönük durmaz */
+            stroke-width: 4.5; /* Çizgi kalınlığı biraz daha belirgin olması için 4.5 yapıldı */
+            box-sizing: border-box;
+            transition: stroke-dashoffset 0.1s linear, stroke 0.3s ease;
+        }
+
+        /* Butonun üzerine gelindiğinde (hover) tam netleşme efekti */
+        #progress-scroll-btn:hover {
+            /* Üzerine gelindiğinde butona çok hafif, şık bir beyaz parıltı hissi ekledik */
+            background-color: rgba(255, 255, 255, 0.1); 
+        }
+
+        #progress-scroll-btn:hover .progress-circle path {
+            stroke: rgba(88, 66, 227, 1); /* Üzerine gelindiğinde mor çizgi tamamen parlar */
+        }
