@@ -1158,6 +1158,63 @@ h2 {
     }
 }
 
+/* =========================================
+   MOBİL BUTON VE FOOTER DÜZELTMELERİ (768px Altı)
+========================================= */
+@media (max-width: 768px) {
+    .navbar {
+        left: auto !important; /* Soldan açılma özelliğini iptal eder */
+        right: -100% !important; /* Menüyü ilk başta ekranın sağının dışına gizler */
+    }
+
+    .navbar.active {
+        right: 0 !important; /* Butona basıldığında sağdan içeri girer */
+        left: auto !important;
+    }
+    
+    /* --- 1 ve 2: Hero ve Hizmetler Butonlarının Boyutu ve Düzeni --- */
+    .hero-buttons,
+    .intro-buttons,
+    .cta-buttons {
+        display: flex !important;
+        flex-direction: row !important; /* Alt alta değil, yan yana dizilmelerini sağlar */
+        flex-wrap: wrap !important; /* Sığmazsa alt satıra geçer */
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+
+    .hero-buttons .btn,
+    .intro-buttons .btn,
+    .cta-buttons .btn {
+        width: auto !important; /* Ekranı tam kaplamasını engeller */
+        flex: 1 1 auto !important; /* Kalan boşluğa göre esnemelerini sağlar */
+        padding: 10px 15px !important; /* Mobilde daha estetik durması için daraltıldı */
+        font-size: 0.9rem !important; /* Yazı boyutu hafif küçültüldü */
+        white-space: nowrap !important;
+    }
+
+    /* --- 3: Footer (Alt Bilgi) Alanını Mobil Uyumlu Yapma --- */
+    .footer-grid {
+        display: flex !important;
+        flex-direction: column !important; /* 4 sütunu alt alta tek sütun yapar */
+        text-align: center !important;
+        gap: 30px !important;
+    }
+
+    .footer-col {
+        width: 100% !important;
+    }
+
+    /* Footer içi hizalamalar */
+    .social-links {
+        justify-content: center !important; /* Sosyal medya ikonlarını ortalar */
+    }
+
+    .contact-info li {
+        justify-content: center !important; /* İletişim maddelerini ortalar */
+    }
+}
+
 
 /* =========================================
    KESİN MOBİL DÜZELTME KODLARI (768px Altı)
