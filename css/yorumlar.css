@@ -1,0 +1,222 @@
+/* ========================================== */
+/* KULLANICI YORUMLARI ALANI (TEMA UYUMLU & TAM EKRAN) */
+/* ========================================== */
+.testimonials-section {
+    padding: 80px 20px;
+    /* */
+    background-color: var(--bg-white);
+    /* Statik beyaz yerine tema değişkeni kullanıldı */
+    overflow: hidden;
+    /*[cite: 5] */
+}
+
+.testimonials-header {
+    text-align: center;
+    /*[cite: 5] */
+    margin-bottom: 40px;
+    /*[cite: 5] */
+}
+
+.testimonials-header h2 {
+    font-size: 2rem;
+    /*[cite: 5] */
+    color: var(--text-dark);
+    /* Tema değişkeni kullanıldı[cite: 3, 5] */
+    margin-bottom: 10px;
+    /*[cite: 5] */
+}
+
+.testimonials-header p {
+    color: var(--text-gray);
+    /* Tema değişkeni kullanıldı[cite: 3, 5] */
+}
+
+.testimonial-slider-wrap {
+    position: relative;
+    /*[cite: 5] */
+    width: 100%;
+    /* max-width: 1200px ve margin: 0 auto kaldırılarak tam ekran yapıldı[cite: 5] */
+    display: flex;
+    /*[cite: 5] */
+    align-items: center;
+    /*[cite: 5] */
+    gap: 15px;
+    /*[cite: 5] */
+}
+
+.testimonial-track-container {
+    overflow: hidden;
+    /*[cite: 5] */
+    width: 100%;
+    /*[cite: 5] */
+    padding: 10px 0;
+    /*[cite: 5] */
+}
+
+.testimonial-track {
+    display: flex;
+    /*[cite: 5] */
+    transition: transform 0.4s ease-in-out;
+    /*[cite: 5] */
+    gap: 20px;
+    /*[cite: 5] */
+}
+
+.testimonial-card {
+    flex: 0 0 calc(33.333% - 13.33px);
+    /*[cite: 5] */
+    background: var(--bg-light);
+    /* Arkaplan tema değişkenine bağlandı[cite: 3, 5] */
+    padding: 30px 25px;
+    /*[cite: 5] */
+    border-radius: var(--radius-md);
+    /* Global ovalleştirme değişkenine bağlandı[cite: 3, 5] */
+    border: 1px solid var(--border-color);
+    /* Çizgi rengi tema değişkenine bağlandı[cite: 3, 5] */
+    box-shadow: var(--shadow-sm);
+    /* Global gölge değişkenine bağlandı[cite: 3, 5] */
+    text-align: left;
+    /*[cite: 5] */
+    box-sizing: border-box;
+    /*[cite: 5] */
+    display: flex;
+    /*[cite: 5] */
+    flex-direction: column;
+    /*[cite: 5] */
+    justify-content: space-between;
+    /*[cite: 5] */
+}
+
+.testimonial-stars {
+    color: #fbbf24;
+    /* Yıldızlar için sarı renk sabit bırakıldı[cite: 5] */
+    margin-bottom: 15px;
+    /*[cite: 5] */
+    font-size: 14px;
+    /*[cite: 5] */
+}
+
+.testimonial-comment {
+    color: var(--text-dark);
+    /* Yazı rengi tema değişkenine bağlandı[cite: 3, 5] */
+    font-size: 0.95rem;
+    /*[cite: 5] */
+    line-height: 1.6;
+    /*[cite: 5] */
+    margin-bottom: 20px;
+    /*[cite: 5] */
+    font-style: italic;
+    /*[cite: 5] */
+}
+
+.testimonial-author h4 {
+    color: var(--text-dark);
+    /* İsim rengi tema değişkenine bağlandı[cite: 3, 5] */
+    font-size: 1rem;
+    /*[cite: 5] */
+    margin: 0 0 5px 0;
+    /*[cite: 5] */
+    font-weight: 600;
+    /*[cite: 5] */
+}
+
+.testimonial-author span {
+    color: var(--text-gray);
+    /* Meslek rengi tema değişkenine bağlandı[cite: 3, 5] */
+    font-size: 0.85rem;
+    /*[cite: 5] */
+}
+
+.slider-btn {
+    background-color: var(--bg-white);
+    /* Buton arkaplanı tema değişkenine bağlandı[cite: 3, 5] */
+    border: 1px solid var(--border-color);
+    /* Buton çizgisi tema değişkenine bağlandı[cite: 3, 5] */
+    color: var(--text-dark);
+    /* İkon rengi tema değişkenine bağlandı[cite: 3, 5] */
+    width: 45px;
+    /*[cite: 5] */
+    height: 45px;
+    /*[cite: 5] */
+    border-radius: 50%;
+    /*[cite: 5] */
+    display: flex;
+    /*[cite: 5] */
+    align-items: center;
+    /*[cite: 5] */
+    justify-content: center;
+    /*[cite: 5] */
+    cursor: pointer;
+    /*[cite: 5] */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /*[cite: 5] */
+    transition: var(--transition);
+    /* Geçiş efekti global değişkene bağlandı[cite: 3, 5] */
+    flex-shrink: 0;
+    /*[cite: 5] */
+    z-index: 2;
+    /*[cite: 5] */
+}
+
+.slider-btn:hover {
+    background-color: var(--accent-color);
+    /* Hover rengi global değişkene bağlandı[cite: 3, 5] */
+    color: #fff;
+    /*[cite: 5] */
+    border-color: var(--accent-color);
+    /*[cite: 3, 5] */
+}
+
+/* BU KISMI BULUP TAMAMEN SİLİN */
+.slider-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: var(--bg-light);
+    color: var(--text-gray);
+    border-color: var(--border-color);
+}
+
+/* Tablet Görünümü */
+@media (max-width: 992px) {
+    .testimonial-card {
+        flex: 0 0 calc(50% - 10px);
+        /*[cite: 5] */
+    }
+}
+
+/* Mobil Görünüm */
+@media (max-width: 768px) {
+    .testimonial-slider-wrap {
+        gap: 5px;
+        /*[cite: 5] */
+    }
+
+    .testimonial-card {
+        flex: 0 0 100%;
+        /*[cite: 5] */
+    }
+
+    .slider-btn {
+        width: 35px;
+        /*[cite: 5] */
+        height: 35px;
+        /*[cite: 5] */
+    }
+}
+
+
+/* Sürükleme Efekti İçin İmleç Sınıfları */
+.testimonial-track-container {
+    cursor: grab;
+    user-select: none;
+    /* Yazıların seçilmesini engeller */
+}
+
+.testimonial-track-container:active {
+    cursor: grabbing;
+}
+
+.testimonial-card {
+    pointer-events: none;
+    /* Sürüklerken kart içindeki metinlerin tutulmasını engeller */
+}

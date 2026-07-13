@@ -1,0 +1,102 @@
+/* --- Hero Section --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s ease;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 800px;
+    padding-left: 2%;
+}
+
+.hero-content p {
+    color: var(--text-gray);
+    margin-bottom: 35px;
+    font-size: 1.15rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-visual {
+    flex: 1;
+    position: relative;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-visual::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-image: radial-gradient(var(--text-gray) 2px, transparent 2px);
+    background-size: 24px 24px;
+    opacity: 0.2;
+    border-radius: 50%;
+    filter: blur(1px);
+}
+
+.floating-card {
+    background: var(--bg-white);
+    padding: 16px 28px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    font-size: 1.05rem;
+    position: absolute;
+    color: var(--text-dark);
+    white-space: nowrap;
+    z-index: 2;
+    border: 1px solid var(--border-color);
+}
+
+.floating-card i {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    background: var(--bg-light);
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.card-1 {
+    top: 15%;
+    right: 25%;
+}
+
+.card-2 {
+    top: 40%;
+    right: 5%;
+}
+
+.card-3 {
+    bottom: 30%;
+    right: 35%;
+}
+
+.card-4 {
+    bottom: 10%;
+    right: 10%;
+}
