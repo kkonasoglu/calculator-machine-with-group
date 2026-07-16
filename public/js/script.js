@@ -383,4 +383,52 @@ document.addEventListener("DOMContentLoaded", () => {
         container.addEventListener('touchend', startAutoPlay, { passive: true });
     }
 
+    // ==========================================
+    // 10. DİNAMİK SAYAÇ (COUNT-UP) ANİMASYONU
+    // ==========================================
+    const counters = document.querySelectorAll('.counter');
+    let hasCounted = false;
+
+    if (counters.length > 0) {
+        // Observer: İstatistik alanı ekranda %50 oranında göründüğünde çalıştır
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasCounted) {
+                    hasCounted = true; // Sayfanın altına/üstüne inilirse tekrar saymasını engeller
+                    
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        const prefix = counter.getAttribute('data-prefix') || '';
+                        const suffix = counter.getAttribute('data-suffix') || '';
+                        const duration = 2000; // Sayma animasyonunun toplam süresi (2 saniye)
+                        
+                        // 60 FPS baz alınarak her adımda eklenecek sayı miktarı
+                        const increment = target / (duration / 16); 
+                        
+                        let currentCount = 0;
+                        
+                        const updateCounter = () => {
+                            currentCount += increment;
+                            
+                            if (currentCount < target) {
+                                counter.innerText = prefix + Math.ceil(currentCount) + suffix;
+                                requestAnimationFrame(updateCounter); // Pürüzsüz animasyon için
+                            } else {
+                                // Küsuratları temizle ve tam sayıyı yazdır
+                                counter.innerText = prefix + target + suffix;
+                            }
+                        };
+                        
+                        updateCounter();
+                    });
+                }
+            });
+        }, { threshold: 0.5 }); // 0.5 = Elementin %50'si ekrana girince başla
+
+        const statsContainer = document.querySelector('.stats-container');
+        if (statsContainer) {
+            counterObserver.observe(statsContainer);
+        }
+    }
+
 });
