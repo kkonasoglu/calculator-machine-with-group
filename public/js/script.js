@@ -443,4 +443,31 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // ==========================================
+    // 11. 3D MOCKUP CAROUSEL ANİMASYONU
+    // ==========================================
+    const carouselImages = document.querySelectorAll('.carousel-img');
+    
+    if(carouselImages.length === 3) {
+        // Her 3.5 saniyede bir resimleri döndür
+        setInterval(() => {
+            // Mevcut sınıflara sahip elementleri bul
+            const active = document.querySelector('.carousel-img.active');
+            const next = document.querySelector('.carousel-img.next');
+            const prev = document.querySelector('.carousel-img.prev');
+
+            if(active && next && prev) {
+                // Saat yönünde sınıf değiştirme işlemi
+                active.classList.remove('active');
+                active.classList.add('prev');
+
+                next.classList.remove('next');
+                next.classList.add('active');
+
+                prev.classList.remove('prev');
+                prev.classList.add('next');
+            }
+        }, 3500); // 3500 milisaniye (3.5 saniye)
+    }
+
 });

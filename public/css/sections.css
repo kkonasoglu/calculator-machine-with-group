@@ -938,3 +938,57 @@
     color: #818cf8 !important; /* Rengi bir tık daha aydınlık bir lila/mavi yapıyoruz */
     text-shadow: 0 0 25px rgba(129, 140, 248, 0.5); /* Harflerin arkasına hafif bir parlama (glow) ekler */
 }
+
+/* =========================================
+   3D MOCKUP CAROUSEL (Hizmetler Görseli)
+========================================= */
+.mockup-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 280px; /* Ana görselin boyutu */
+    height: 550px; /* Kapsayıcı yüksekliği */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px; /* 3D derinlik algısı oluşturur */
+    margin: 0 auto;
+}
+
+.carousel-img {
+    position: absolute;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 4px solid var(--bg-white);
+    /* Animasyonun pürüzsüz ve tatlı bir ivmeyle kaymasını sağlar */
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1); 
+    background-color: var(--bg-light);
+}
+
+/* 1. EN ÖNDEKİ RESİM (Tam net ve odakta) */
+.carousel-img.active {
+    z-index: 3;
+    transform: translateX(0) scale(1) rotate(0deg);
+    opacity: 1;
+}
+
+/* 2. SAĞ ARKADAKİ RESİM (Küçülmüş, sağa kaymış ve arkaya yatmış) */
+.carousel-img.next {
+    z-index: 2;
+    transform: translateX(55%) scale(0.85) rotate(6deg);
+    opacity: 0.5;
+    filter: blur(2px); /* Odak dışı olduğu için hafif bulanık */
+}
+
+/* 3. SOL ARKADAKİ RESİM (Küçülmüş, sola kaymış ve arkaya yatmış) */
+.carousel-img.prev {
+    z-index: 1;
+    transform: translateX(-55%) scale(0.85) rotate(-6deg);
+    opacity: 0.5;
+    filter: blur(2px);
+}
+
+/* Karanlık Tema Ayarı: Çerçeveler tema rengine uyum sağlasın */
+[data-theme="dark"] .carousel-img {
+    border-color: #374151; /* --border-color değerine denk gelir */
+}
