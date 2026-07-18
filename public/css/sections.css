@@ -216,8 +216,9 @@
 .panel-img {
     display: block;
     width: 100%;
-    max-width: 350px;
+    max-width: 260px; /* Boyutu buradan ayarlayabilirsin, 350'den 260'a düşürdük */
     height: auto;
+    margin: 0 auto;
 }
 
 .stats-bar {
