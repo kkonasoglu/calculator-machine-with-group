@@ -297,27 +297,84 @@
     }
 }
 
-/* Mobil cihazlarda 3D Carousel ve Buton Düzeni */
+/* =========================================
+   MOBİL CAROUSEL & AKICI GEÇİŞ ANİMASYONU
+========================================= */
 @media (max-width: 768px) {
-    /* 1. Carousel kutusunu küçült ve yüksekliği dengele */
-    .mockup-carousel {
-        height: 350px !important; 
-        max-width: 220px !important; 
-        margin: 0 auto 20px auto !important; /* Ortala ve alt boşluk bırak */
+    /* Görsel Alanı Düzeni */
+    .intro-visual {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        min-height: 480px !important;
+        position: relative !important;
+        padding: 20px 0 !important;
     }
 
-    /* 2. Cihaz değiştirme butonlarını kutunun dışından kurtar (Static yaparak akışa ekle) */
+    /* Cihaz Butonları */
     .device-toggle-wrapper {
         position: static !important;
         transform: none !important;
-        flex-direction: row !important; /* Yan yana diz */
+        flex-direction: row !important;
         justify-content: center !important;
         gap: 15px !important;
-        margin-top: 10px !important;
+        margin-bottom: 25px !important;
+        z-index: 20 !important;
     }
 
-    /* 3. Görsellerin mobilde biraz daha küçük görünmesi için ölçeklendirme */
+    /* Mobil Carousel Boyutları (Telefon Modu) */
+    .mockup-carousel {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 240px !important;
+        height: 420px !important;
+        margin: 0 auto !important;
+        perspective: 800px !important; /* Yumuşak derinlik dahi ekledik */
+    }
+
+    /* Masaüstü Modu (Yatay Ekran) */
+    .mockup-carousel.desktop-mode {
+        max-width: 100% !important;
+        height: 220px !important;
+    }
+
+    /* Resimlerin Ortak Geçiş (Transition) Ayarı */
     .carousel-img {
-        max-width: 100%;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        border-radius: 12px !important;
+        /* Geçişi ultra akıcı yapan easing fonksiyonu */
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                    opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                    filter 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    /* 1. Aktif (Öndeki) Resim */
+    .carousel-img.active {
+        z-index: 3 !important;
+        transform: translateX(0) scale(1) !important;
+        opacity: 1 !important;
+        filter: blur(0px) !important;
+    }
+
+    /* 2. Sıradaki (Giden/Gelen) Resimler - Sağa ve Sola Kayarak Saydamlaşır */
+    .carousel-img.next {
+        z-index: 1 !important;
+        transform: translateX(40px) scale(0.85) !important; /* Ekrandan taşmadan hafifçe sağa kayar */
+        opacity: 0 !important;
+        filter: blur(4px) !important;
+    }
+
+    .carousel-img.prev {
+        z-index: 1 !important;
+        transform: translateX(-40px) scale(0.85) !important; /* Ekrandan taşmadan hafifçe sola kayar */
+        opacity: 0 !important;
+        filter: blur(4px) !important;
     }
 }
